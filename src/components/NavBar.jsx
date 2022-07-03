@@ -1,26 +1,38 @@
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import image from "../logoDLT.png";
+import StyleOnMenu from "./StyleOnMenu";
+import CartWidget from "./CartWidget";
 
-const NavBarId = () => {
-    return (
-        <>
-        <ul className="nav justify-content-center">
-            <a className="navbar-brand" href="App.js">
-                <img className="rounded-circle Logo" src={image} alt="logo" />
-            </a>
-            <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="App.js">Home</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" href="App.js">Imagenes</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link" href="App.js">Compra</a>
-            </li>
-            <li classNameName="nav-item">
-                <a className="nav-link" href="App.js">Contacto</a>
-            </li>
-        </ul></>
-    );
+const NavBarId = ({marca}) => {
+    const estiloMenu = marca.toUpperCase();
+  return (
+    <Navbar className="navbar" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">
+          <img
+            style={{"border-radius":500}}
+            alt="Logo DLT"
+            src={image}
+            width="150"
+            height="auto"
+            className="d-inline-block align-top"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle />
+        <Navbar.Collapse>
+          <Nav className="me-auto">
+            <Nav.Link>{estiloMenu}</Nav.Link>
+            <Nav.Link><StyleOnMenu menu={"Las Macetas"}/></Nav.Link>
+            <Nav.Link><StyleOnMenu menu={"Imagenes"}/></Nav.Link>
+            <Nav.Link><StyleOnMenu menu={"Contacto"}/></Nav.Link>
+            <Nav.Link><CartWidget/></Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 };
 
 export default NavBarId;
+
