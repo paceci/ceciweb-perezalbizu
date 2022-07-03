@@ -20,8 +20,8 @@ const NavBarId = ({marca}) => {
           />
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav className="me-auto">
+        <Navbar.Collapse className="justify-content-end">
+          <Nav>
             <Nav.Link>{estiloMenu}</Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Las Macetas"}/></Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Imagenes"}/></Nav.Link>
