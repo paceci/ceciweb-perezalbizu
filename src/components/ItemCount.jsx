@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 
-function ItemCount(props) {
-    const [count, setCount] = useState(props.initial);
+function ItemCount({initial, stock, onAdd}) {
+    const [count, setCount] = useState(initial);
 
     function handleAdd() {
-        if (count < props.stock)
+        if (count < stock)
         setCount(count + 1);
     }
 
     function handleSustract() {
         if (count >= 2)
         setCount(count - 1);
-
+    }
+    function handleOnAddToCart(){
+        if (stock > 0 && count < stock){
+            onAdd(count);
+        }
     }
 
     return ( 
@@ -24,7 +28,7 @@ function ItemCount(props) {
         </div>
         <br />
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button class="btn btn-secondary" type="button">Agregar al Carrito</button>
+            <button onClick={handleOnAddToCart} class="btn btn-secondary" type="button">Agregar al Carrito</button>
         </div>
         </>
     );

@@ -24,7 +24,7 @@ const NavBarId = ({marca}) => {
           <Nav>
             <Nav.Link>{estiloMenu}</Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Las Macetas"}/></Nav.Link>
-            <Nav.Link><StyleOnMenu menu={"Imagenes"}/></Nav.Link>
+            <Nav.Link><StyleOnMenu menu={"Imágenes"}/></Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Contacto"}/></Nav.Link>
             <Nav.Link><CartWidget/></Nav.Link>
           </Nav>
