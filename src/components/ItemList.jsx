@@ -11,7 +11,7 @@ const ItemList = (props) => {
         {
             props.items.map(
                 cadaItem => 
-                <Item items={cadaItem} />)
+                <Item key={cadaItem.id} items={cadaItem} />)
         }
         </>
     )
