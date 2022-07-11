@@ -21,3 +21,7 @@
   font-size: 20px;
   text-align: center;
 }
+.subtitulo {
+  background-color: rgb(210, 214, 188) !important;
+  color: rgba(8, 34, 235, 0.5) !important;
+}

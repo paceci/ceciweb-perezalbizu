@@ -1,17 +1,18 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import BaseProductos from "./ItemListContainer";
+import { Card, Button } from "react-bootstrap";
 
-const Item = (items) => {
+const Item = ({items}) => {
     return ( 
         <>
-        <Card>
-            <Card.Img variant="top" src={BaseProductos.img} />
-            <Card.Body>
-                <Card.Title>{BaseProductos.nombre}</Card.Title>
-                <Card.Text>{BaseProductos.medida} {BaseProductos.precio}</Card.Text>
-            </Card.Body>
-        </Card>
+        <div>
+            <Card className="subtitulo text-center" style={{width: 288}}>
+                <Card.Img variant="top" src={items.img}  />
+                <Card.Body>
+                    <Card.Title>{items.nombre}</Card.Title>
+                    <Button variant="light">Mirá las opciones</Button>
+                </Card.Body>
+            </Card>
+        </div>
         </>
 
     );

@@ -17,7 +17,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N12 Mediana",
             precio: 700,
             stock: 12,
-            img:"/imagenes/clasica5.jpg",
+            img:"/imagenes/clasica1.jpg",
         },
         {
             id:3,
@@ -25,7 +25,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N14 Grande",
             precio: 800,
             stock: 12,
-            img:"/imagenes/clasica5.jpg",
+            img:"/imagenes/muestra2.jpg",
         },
         {
             id:4,
@@ -33,7 +33,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N20 Extra Grande",
             precio: 1000,
             stock: 12,
-            img:"/imagenes/clasica5.jpg",
+            img:"/imagenes/muestraHome.jpg",
         },
         {
             id:5,
@@ -49,7 +49,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N12 Mediana",
             precio: 750,
             stock: 12,
-            img:"/imagenes/icono5.jpg",
+            img:"/imagenes/icono_yellow.jpg",
         },
         {
             id:7,
@@ -57,7 +57,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N14 Grande",
             precio: 850,
             stock: 12,
-            img:"/imagenes/icono5.jpg",
+            img:"/imagenes/icono_black.jpg",
         },
         {
             id:8,
@@ -81,7 +81,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N12 Mediana",
             precio: 800,
             stock: 12,
-            img:"/imagenes/cilindro5.jpg",
+            img:"/imagenes/cilindro.jpg",
         },
         {
             id:11,
@@ -89,7 +89,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N14 Grande",
             precio: 900,
             stock: 12,
-            img:"/imagenes/cilindro5.jpg",
+            img:"/imagenes/muestraHome.jpg",
         },
         {
             id:12,
@@ -97,7 +97,7 @@ const ListaProductos = ({greeting}) => {
             medida:"N20 Extra Grande",
             precio: 1200,
             stock: 12,
-            img:"/imagenes/cilindro5.jpg",
+            img:"/imagenes/cilindro.jpg",
         }
         ];
         

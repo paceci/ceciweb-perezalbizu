@@ -14,6 +14,7 @@ function App() {
     <>
     <NavBarId marca="De La Terraza" />
     <ItemListContainer greeting="Somos de la Terraza. Pintamos macetas de barro artesanalmente."/>
+    <br></br>
     <ItemCount stock={8} initial={1} onAdd={handleOnAdd}/>
     </>);
 }
