@@ -4,100 +4,22 @@ import ItemList from "./ItemList";
 const ListaProductos = ({greeting}) => {
     const BaseProductos = [
         {
-            id: 1,
+            id:1,
             nombre:"Clásica",
-            medida:"N10 Chica",
-            precio: 600,
-            stock: 12,
-            img:"/imagenes/clasica5.jpg",
+            img:"https://images.unsplash.com/photo-1534754789238-6250d515412f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+            
         },
         {
             id:2,
-            nombre:"Clásica",
-            medida:"N12 Mediana",
-            precio: 700,
-            stock: 12,
-            img:"/imagenes/clasica1.jpg",
+            nombre:"Icono",
+            img:"https://images.unsplash.com/photo-1621274220348-41dc235ff439?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+        
         },
         {
             id:3,
-            nombre:"Clásica",
-            medida:"N14 Grande",
-            precio: 800,
-            stock: 12,
-            img:"/imagenes/muestra2.jpg",
-        },
-        {
-            id:4,
-            nombre:"Clásica",
-            medida:"N20 Extra Grande",
-            precio: 1000,
-            stock: 12,
-            img:"/imagenes/muestraHome.jpg",
-        },
-        {
-            id:5,
-            nombre:"Icono",
-            medida:"N10 Chica",
-            precio: 650,
-            stock: 12,
-            img:"/imagenes/icono5.jpg",
-        },
-        {
-            id:6,
-            nombre:"Icono",
-            medida:"N12 Mediana",
-            precio: 750,
-            stock: 12,
-            img:"/imagenes/icono_yellow.jpg",
-        },
-        {
-            id:7,
-            nombre:"Icono",
-            medida:"N14 Grande",
-            precio: 850,
-            stock: 12,
-            img:"/imagenes/icono_black.jpg",
-        },
-        {
-            id:8,
-            nombre:"Icono",
-            medida:"N20 Extra Grande",
-            precio: 1000,
-            stock: 12,
-            img:"/imagenes/icono5.jpg",
-        },
-        {
-            id:9,
             nombre:"Cilindro",
-            medida:"N10 Chica",
-            precio: 700,
-            stock: 12,
-            img:"/imagenes/cilindro5.jpg",
-        },
-        {
-            id:10,
-            nombre:"Cilindro",
-            medida:"N12 Mediana",
-            precio: 800,
-            stock: 12,
-            img:"/imagenes/cilindro.jpg",
-        },
-        {
-            id:11,
-            nombre:"Cilindro",
-            medida:"N14 Grande",
-            precio: 900,
-            stock: 12,
-            img:"/imagenes/muestraHome.jpg",
-        },
-        {
-            id:12,
-            nombre:"Cilindro",
-            medida:"N20 Extra Grande",
-            precio: 1200,
-            stock: 12,
-            img:"/imagenes/cilindro.jpg",
+            img:"https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+    
         }
         ];
         
@@ -117,7 +39,7 @@ const ListaProductos = ({greeting}) => {
              });
              promiseItems.then(
                  (respuesta) => {
-                    setItems(BaseProductos);
+                    setItems(respuesta);
                  }
              ).catch(
                 (errorMsg) => console.error(errorMsg)
@@ -128,8 +50,10 @@ const ListaProductos = ({greeting}) => {
 
     return ( 
         <>
-        <p class="slogan">{greeting}</p>
-        <ItemList items={items}/>
+        <div className="container-fluid">
+            <p class="slogan">{greeting}</p>
+            <ItemList items={items}/>
+        </div>
         </>
         
     );
