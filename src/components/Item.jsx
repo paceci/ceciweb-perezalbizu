@@ -6,7 +6,7 @@ const Item = ({items}) => {
         <>
         <div>
             <Card className="subtitulo text-center" style={{width: 288}}>
-                <Card.Img variant="top" src={items.img}  />
+                <Card.Img variant="top" src={items.url}  />
                 <Card.Body>
                     <Card.Title>{items.nombre}</Card.Title>
                     <Button variant="light">Mirá las opciones</Button>
