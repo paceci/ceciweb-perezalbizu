@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import categorias from "./utils/categorias";
 
-const ListaProductos = ({greeting}) => {
+const ItemListContainer = ({greeting}) => {
             
     let [items, setItems] = useState([]);
 
@@ -40,4 +40,4 @@ const ListaProductos = ({greeting}) => {
     );
 }
  
-export default ListaProductos;
+export default ItemListContainer;
