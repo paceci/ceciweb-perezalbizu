@@ -1,8 +1,13 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import ItemCount from './ItemCount';
+
 
 
 const ItemDetail = ({maceta}) => {
+    function handleOnAdd(count) {
+        alert(`Agregaste ${count} al carrito`)};
+
     return ( 
 
         <>
@@ -15,6 +20,7 @@ const ItemDetail = ({maceta}) => {
                     <Card.Text>$ {maceta.precio}</Card.Text>
                     <Card.Text>{maceta.color}</Card.Text>
                 </Card.Body>
+                <ItemCount stock={8} initial={1} onAdd={handleOnAdd}/>
             </Card>
         </div>
         </>
