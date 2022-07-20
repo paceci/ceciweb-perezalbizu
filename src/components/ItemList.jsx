@@ -3,7 +3,6 @@ import Item from './Item';
 
 
 const ItemList = (props) => {
-    console.log(("Render ItemList", props.items));
     
     return (
         <>

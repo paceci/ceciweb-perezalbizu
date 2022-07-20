@@ -7,7 +7,7 @@ const macetas = [
        medida: "N10 Chica",
        color:"Fucsia",
        precio: 600,
-       stock: 200,
+       stock: 20,
     },
     {
        id: 2,

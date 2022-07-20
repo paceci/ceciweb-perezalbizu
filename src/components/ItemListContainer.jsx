@@ -1,33 +1,27 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import categorias from "./utils/categorias";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greeting}) => {
-            
+
+    const { name } = useParams();
     let [items, setItems] = useState([]);
 
-    console.log("%c Render ItemListContainer", "color: green");
-    console.log(items);
+    const promise = new Promise ((resolve) => {
+        setTimeout(() => resolve(categorias), 2000);
+     });
 
-    useEffect(
-        () => {
-            let promiseItems = new Promise ((resolve, reject) => {
-                setTimeout(
-                 () => {
-                     resolve(categorias);
-                },
-                2000);
-             });
-             promiseItems.then(
-                 (respuesta) => {
-                    setItems(respuesta);
-                 }
-             ).catch(
-                (errorMsg) => console.error(errorMsg)
-             )
-        },
-        []
-    )
+     useEffect(() => {
+        promise.then((res) => {
+          const products = res;
+          if (name) {
+            setItems(products.filter((product) => product.category === name));
+          } else {
+            setItems(products);
+          }
+        });
+      }, [name]);
 
     return ( 
         <>

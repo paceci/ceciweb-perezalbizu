@@ -3,13 +3,14 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import image from "../logoDLT.png";
 import StyleOnMenu from "./StyleOnMenu";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 const NavBarId = ({marca}) => {
     const estiloMenu = marca.toUpperCase();
   return (
     <Navbar className="navbar" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Link to={"/"} className="navbar-brand">
           <img
             style={{"border-radius":500}}
             alt="Logo DLT"
@@ -18,12 +19,14 @@ const NavBarId = ({marca}) => {
             height="auto"
             className="d-inline-block align-top"
           />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav>
-            <Nav.Link>{estiloMenu}</Nav.Link>
-            <Nav.Link><StyleOnMenu menu={"Las Macetas"}/></Nav.Link>
+            <Link to={"/"} className="nav-link" >{estiloMenu}</Link>
+            <Link to={"/categoria/Clásica"} className="nav-link"><StyleOnMenu menu={"Clasica"}/></Link>
+            <Link to={"/categoria/Icono"} className="nav-link"><StyleOnMenu menu={"Icono"}/></Link>
+            <Link to={"/categoria/Cilindro"} className="nav-link"><StyleOnMenu menu={"Cilindro"}/></Link>
             <Nav.Link><StyleOnMenu menu={"Imágenes"}/></Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Contacto"}/></Nav.Link>
             <Nav.Link><CartWidget/></Nav.Link>

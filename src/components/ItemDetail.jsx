@@ -20,7 +20,7 @@ const ItemDetail = ({maceta}) => {
                     <Card.Text>$ {maceta.precio}</Card.Text>
                     <Card.Text>{maceta.color}</Card.Text>
                 </Card.Body>
-                <ItemCount stock={8} initial={1} onAdd={handleOnAdd}/>
+                <ItemCount stock={maceta.stock} initial={1} onAdd={handleOnAdd}/>
             </Card>
         </div>
         </>
