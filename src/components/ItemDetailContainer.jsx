@@ -21,10 +21,10 @@ const ItemDetailContainer = ({ subtitle }) => {
     getItem().then((respuestaPromise) => {
       console.log(respuestaPromise[0]);
       if (id) {
-        const modelo = respuestaPromise.filter((modelo) => {
+        const modelo = respuestaPromise.find((modelo) => {
           console.log(modelo);
           console.log(id);
-        return modelo.id === id; })
+        return modelo.id === Number(id) })
         console.log(modelo);
         setMaceta(modelo);      }
     });
