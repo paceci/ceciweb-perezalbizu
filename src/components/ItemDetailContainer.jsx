@@ -34,7 +34,7 @@ const ItemDetailContainer = ({ subtitle }) => {
     <>
       <div className="container-fluid justify-content-center">
         <p class="slogan">{subtitle}</p>
-        {/* <ItemDetail maceta={maceta} /> */}
+        <ItemDetail maceta={maceta} />
       </div>
     </>
   );
