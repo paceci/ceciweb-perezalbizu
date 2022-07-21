@@ -1,16 +1,21 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-const Item = ({items}) => {
+
+const Item = ({item}) => {
+    console.log(item);
+    // const history = useHistory();
+    // console.log(history);
+    
     return ( 
         <>
         <div>
             <Card className="subtitulo text-center" style={{width: 288}}>
-                <Card.Img variant="top" src={items.url}  />
+                <Card.Img variant="top" src={item.url}  />
                 <Card.Body>
-                    <Card.Title>{items.nombre}</Card.Title>
-                    <Link to={"/item/:id"}><Button variant="light">Mirá las opciones</Button></Link>
+                    <Card.Title>{item.nombre}</Card.Title>
+                    <Link to={`/item/${item.id}`}><Button variant="light">Mirá las opciones</Button></Link>
                 </Card.Body>
             </Card>
         </div>

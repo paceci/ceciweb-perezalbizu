@@ -5,7 +5,9 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({greeting}) => {
 
-    const { name } = useParams();
+    const { categoria } = useParams();
+    console.log(categoria);
+    
     let [items, setItems] = useState([]);
 
     const promise = new Promise ((resolve) => {
@@ -15,13 +17,13 @@ const ItemListContainer = ({greeting}) => {
      useEffect(() => {
         promise.then((res) => {
           const products = res;
-          if (name) {
-            setItems(products.filter((product) => product.category === name));
+          if (categoria) {
+            setItems(products.filter((product) => product.category === categoria));
           } else {
             setItems(products);
           }
         });
-      }, [name]);
+      }, [categoria]);
 
     return ( 
         <>

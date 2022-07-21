@@ -13,7 +13,7 @@ const ItemList = (props) => {
         {
             props.items.map(
                 cadaItem => 
-                <Item key={cadaItem.id} items={cadaItem} />)
+                <Item key={cadaItem.id} item={cadaItem} />)
         }
         </div>
         </div>
