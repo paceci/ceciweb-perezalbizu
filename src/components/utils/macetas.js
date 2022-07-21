@@ -12,7 +12,7 @@ const macetas = [
     {
        id: 2,
        categoria:"Clásica",
-       url:"https://images.unsplash.com/photo-1534754789238-6250d515412f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+       url:"https://images.unsplash.com/photo-1519336056116-bc0f1771dec8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGNhY3R1c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
        medida: "N12 Mediana",
        color:"Fucsia",
        stock: 200,
@@ -21,7 +21,7 @@ const macetas = [
     {
        id: 3,
        categoria:"Clásica",
-       url:"https://images.unsplash.com/photo-1534754789238-6250d515412f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+       url:"https://images.unsplash.com/photo-1493834685523-df9beaf95762?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGNhY3R1c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
        medida: "N14 Grande",
        stock: 200,
        color:"Fucsia",
@@ -30,7 +30,7 @@ const macetas = [
     {
        id: 4,
        categoria:"Clásica",
-       url:"https://images.unsplash.com/photo-1534754789238-6250d515412f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+       url:"https://images.unsplash.com/photo-1507236827745-1dbaaeb68a3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGNhY3R1c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
        medida: "N20 Extra Grande",
        color:"Negra",
        precio: 1000
