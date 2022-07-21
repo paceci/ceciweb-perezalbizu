@@ -1,12 +1,10 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Item = ({item}) => {
     console.log(item);
-    // const history = useHistory();
-    // console.log(history);
     
     return ( 
         <>
