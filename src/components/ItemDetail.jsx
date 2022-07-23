@@ -1,17 +1,15 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import ItemCount from './ItemCount';
-import { useNavigate } from "react-router-dom";
 
 const ItemDetail = ({maceta}) => {
 
     const [count, setCount] = useState(0);
-    const navigate = useNavigate();
 
     function handleOnAdd(count) {
         alert(`Agregaste ${count} al carrito`)
         setCount(count);
-        navigate("/cart");
     };
 
     return ( 
@@ -27,6 +25,7 @@ const ItemDetail = ({maceta}) => {
                     <Card.Text>{maceta.color}</Card.Text>
                 </Card.Body>
                 {(count === 0) && <ItemCount stock={maceta.stock} initial={1} onAdd={handleOnAdd}/>}
+                <Link to="/cart"><button className="btn btn-secondary">Finalizá tu compra...</button></Link>
             </Card>
         </div>
         </>
