@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import ItemCount from './ItemCount';
+import { CartContext } from "../contexts/CartContext";
 
-const ItemDetail = ({maceta}) => {
-
+const ItemDetail = ({setAmountItems, maceta}) => {
+    const {setCartItems} = useContext(CartContext);
+    console.log(setCartItems);
     const [count, setCount] = useState(0);
 
     function handleOnAdd(count) {
         alert(`Agregaste ${count} al carrito`)
         setCount(count);
+        setCartItems((prevState) => [...prevState, maceta])
     };
 
     return ( 

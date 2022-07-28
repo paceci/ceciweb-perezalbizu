@@ -7,7 +7,6 @@ const ItemListContainer = ({greeting}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [items, setItems] = useState([]);
   const { categoria } = useParams();
-  console.log(categoria);
     
   // let [items, setItems] = useState([]);
 
@@ -36,10 +35,10 @@ const ItemListContainer = ({greeting}) => {
     return ( 
         <>
         {isLoading ? (
-          <p class="slogan">Estamos buscando los productos ...</p>
+          <p className="slogan">Estamos buscando los productos ...</p>
         ) : (
           <div className="container-fluid">
-            <p class="slogan">{greeting}</p>
+            <p className="slogan">{greeting}</p>
             <ItemList items={items}/>
           </div>
         )}

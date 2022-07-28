@@ -20,15 +20,15 @@ function ItemCount({initial, stock, onAdd}) {
 
     return ( 
         <>
-        <h1 class="counterText">Cuantas macetas queres comprar?</h1>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button onClick={handleSustract} class="btn btn-secondary me-md-2" type="button">-</button>
+        <h1 className="counterText">Cuantas macetas queres comprar?</h1>
+        <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button onClick={handleSustract} className="btn btn-secondary me-md-2" type="button">-</button>
             <span> {count} </span>
-            <button onClick={handleAdd} class="btn btn-secondary" type="button">+</button>
+            <button onClick={handleAdd} className="btn btn-secondary" type="button">+</button>
         </div>
         <br />
-        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-            <button onClick={handleOnAddToCart} class="btn btn-secondary" type="button">Agregar al Carrito</button>
+        <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+            <button onClick={handleOnAddToCart} className="btn btn-secondary" type="button">Agregar al Carrito</button>
         </div>
         </>
     );

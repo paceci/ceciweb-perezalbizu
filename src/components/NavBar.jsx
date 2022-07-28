@@ -5,14 +5,14 @@ import StyleOnMenu from "./StyleOnMenu";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
-const NavBarId = ({marca}) => {
+const NavBarId = ({amountItems, marca}) => {
     const estiloMenu = marca.toUpperCase();
   return (
     <Navbar className="navbar" expand="lg">
       <Container>
         <Link to={"/"} className="navbar-brand">
           <img
-            style={{"border-radius":500}}
+            style={{"borderRadius":500}}
             alt="Logo DLT"
             src={image}
             width="150"
@@ -29,7 +29,7 @@ const NavBarId = ({marca}) => {
             <Link to={"/categoria/Cilindro"} className="nav-link"><StyleOnMenu menu={"Cilindro"}/></Link>
             <Nav.Link><StyleOnMenu menu={"Imágenes"}/></Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Contacto"}/></Nav.Link>
-            <Nav.Link><CartWidget/></Nav.Link>
+            <Link to="/cart" className="nav-link"><CartWidget amountItems={amountItems}/></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

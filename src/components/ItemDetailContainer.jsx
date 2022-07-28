@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import macetas from "./utils/macetas"; 
-import { useParams} from "react-router";
-
+import macetas from "./utils/macetas";
+import { useParams } from "react-router";
 
 function getItem() {
   return new Promise((resolve, reject) => {
@@ -12,29 +11,40 @@ function getItem() {
   });
 }
 
-const ItemDetailContainer = ({ subtitle }) => {
-  const [maceta, setMaceta] = useState({categoria:"", url:"", medida:"", precio:"", stock:0, color:""});
-  const {id} = useParams();
-  console.log(id);
+const ItemDetailContainer = ({ setAmountItems, subtitle }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [maceta, setMaceta] = useState();
+  const { id } = useParams();
 
   useEffect(() => {
-    getItem().then((respuestaPromise) => {
-      console.log(respuestaPromise[0]);
-      if (id) {
-        const modelo = respuestaPromise.find((modelo) => {
-          console.log(modelo);
-          console.log(id);
-        return modelo.id === Number(id) })
-        console.log(modelo);
-        setMaceta(modelo);      }
-    });
+    setIsLoading(true);
+
+    getItem()
+      .then((items) => {
+        const modelo = items.find((modelo) => modelo.id === Number(id));
+
+        setMaceta(modelo);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, [id]);
+
+  if (isLoading) {
+    return <p className="slogan">Estamos buscando los productos ...</p>;
+  }
 
   return (
     <>
       <div className="container-fluid justify-content-center">
-        <p class="slogan">{subtitle}</p>
-        <ItemDetail maceta={maceta} />
+        {maceta ? (
+          <>
+            <p className="slogan">{subtitle}</p>
+            <ItemDetail maceta={maceta} setAmountItems={setAmountItems}/>
+          </>
+        ) : (
+          <p className="slogan">Ups! La maceta no existe ...</p>
+        )}
       </div>
     </>
   );
