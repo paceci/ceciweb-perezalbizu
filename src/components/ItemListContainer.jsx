@@ -7,11 +7,8 @@ const ItemListContainer = ({greeting}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [items, setItems] = useState([]);
   const { categoria } = useParams();
-    
-  // let [items, setItems] = useState([]);
-
-    const promise = new Promise ((resolve) => {
-        setTimeout(() => resolve(macetas), 2000);
+  const promise = new Promise ((resolve) => {
+    setTimeout(() => resolve(macetas), 2000);
      });
 
      useEffect(() => {

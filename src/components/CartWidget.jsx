@@ -3,7 +3,7 @@ import cart from "../cart.png";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 
-const CartWidget = ({amountItems}) => {
+const CartWidget = () => {
     const {cartItems} = useContext(CartContext);
 
     return (

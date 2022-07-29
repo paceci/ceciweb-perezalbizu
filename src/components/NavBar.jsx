@@ -5,7 +5,7 @@ import StyleOnMenu from "./StyleOnMenu";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
-const NavBarId = ({amountItems, marca}) => {
+const NavBarId = ({marca}) => {
     const estiloMenu = marca.toUpperCase();
   return (
     <Navbar className="navbar" expand="lg">
@@ -29,7 +29,7 @@ const NavBarId = ({amountItems, marca}) => {
             <Link to={"/categoria/Cilindro"} className="nav-link"><StyleOnMenu menu={"Cilindro"}/></Link>
             <Nav.Link><StyleOnMenu menu={"Imágenes"}/></Nav.Link>
             <Nav.Link><StyleOnMenu menu={"Contacto"}/></Nav.Link>
-            <Link to="/cart" className="nav-link"><CartWidget amountItems={amountItems}/></Link>
+            <Link to="/cart" className="nav-link"><CartWidget /></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

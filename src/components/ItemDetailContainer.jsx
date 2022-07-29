@@ -11,7 +11,7 @@ function getItem() {
   });
 }
 
-const ItemDetailContainer = ({ setAmountItems, subtitle }) => {
+const ItemDetailContainer = ({ subtitle }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [maceta, setMaceta] = useState();
   const { id } = useParams();
@@ -40,7 +40,7 @@ const ItemDetailContainer = ({ setAmountItems, subtitle }) => {
         {maceta ? (
           <>
             <p className="slogan">{subtitle}</p>
-            <ItemDetail maceta={maceta} setAmountItems={setAmountItems}/>
+            <ItemDetail maceta={maceta} />
           </>
         ) : (
           <p className="slogan">Ups! La maceta no existe ...</p>

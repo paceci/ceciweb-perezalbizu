@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 import ItemCount from './ItemCount';
 import { CartContext } from "../contexts/CartContext";
 
-const ItemDetail = ({setAmountItems, maceta}) => {
+const ItemDetail = ({maceta}) => {
     const {setCartItems} = useContext(CartContext);
     console.log(setCartItems);
     const [count, setCount] = useState(0);
