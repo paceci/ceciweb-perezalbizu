@@ -6,7 +6,6 @@ import { CartContext } from "../contexts/CartContext";
 
 const ItemDetail = ({maceta}) => {
     const {setCartItems} = useContext(CartContext);
-    console.log(setCartItems);
     const [count, setCount] = useState(0);
 
     function handleOnAdd(count) {
