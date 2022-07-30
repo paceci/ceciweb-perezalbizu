@@ -19,7 +19,7 @@ const Cart = () => {
     
     return (
     <>
-    <div className="slogan">
+    <div className="container text-center">
         <h2 className="slogan">Finalizá tu compra...</h2>
             {cartItems.map(maceta => (
         <>
