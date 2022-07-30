@@ -17,9 +17,9 @@ function App() {
       <BrowserRouter>
         <NavBarId marca="De La Terraza" />
         <Routes>
-          <Route index element={<ItemListContainer greeting="Somos de la Terraza. Pintamos macetas de barro artesanalmente."/>} />
-          <Route path="/categoria/:categoria" element={<ItemListContainer greeting="Somos de la Terraza. Pintamos macetas de barro artesanalmente."/>} />
-          <Route path="/item/:id" element={<ItemDetailContainer subtitle="Te mostramos lo que hacemos" />} />
+          <Route index element={<ItemListContainer />} />
+          <Route path="/categoria/:categoria" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="*" element={
             <div>ERROR 404 NOT FOUND</div> } />
           <Route path="/cart" element ={<Cart />} />

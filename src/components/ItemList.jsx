@@ -8,7 +8,7 @@ const ItemList = (props) => {
         <>
         <div>
         <h2 className="slogan">Lista de Macetas</h2>
-        <div className="card-deck row row-cols-1 row-cols-md-4 justify-content-center">
+        <div className="card-deck row row-cols-1 row-cols-md-4 align-items-center">
 
         {
             props.items.map(
@@ -22,3 +22,5 @@ const ItemList = (props) => {
 }
  
 export default ItemList;
+
+

@@ -11,7 +11,7 @@ function getItem() {
   });
 }
 
-const ItemDetailContainer = ({ subtitle }) => {
+const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [maceta, setMaceta] = useState();
   const { id } = useParams();
@@ -39,7 +39,7 @@ const ItemDetailContainer = ({ subtitle }) => {
       <div className="container-fluid justify-content-center">
         {maceta ? (
           <>
-            <p className="slogan">{subtitle}</p>
+            <p className="slogan">Te mostramos lo que hacemos:</p>
             <ItemDetail maceta={maceta} />
           </>
         ) : (

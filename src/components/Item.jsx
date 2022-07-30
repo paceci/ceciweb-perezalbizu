@@ -11,7 +11,8 @@ const Item = ({item}) => {
             <Card className="subtitulo text-center" style={{width: 288}}>
                 <Card.Img variant="top" src={item.url} className="Card" />
                 <Card.Body>
-                    <Card.Title>{item.nombre}</Card.Title>
+                    <Card.Title>{item.categoria}</Card.Title>
+                    <Card.Text>{item.medida}</Card.Text>
                     <Link to={`/item/${item.id}`}><Button variant="light">Mirá las opciones</Button></Link>
                 </Card.Body>
             </Card>
