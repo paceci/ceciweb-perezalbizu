@@ -5,13 +5,14 @@ import ItemCount from './ItemCount';
 import { CartContext } from "../contexts/CartContext";
 
 const ItemDetail = ({maceta}) => {
-    const {setCartItems} = useContext(CartContext);
+    const {setCartItems, addProduct} = useContext(CartContext);
     const [count, setCount] = useState(0);
 
     function handleOnAdd(count) {
-        alert(`Agregaste ${count} al carrito`)
         setCount(count);
         setCartItems((prevState) => [...prevState, maceta])
+        addProduct(maceta, count);
+
     };
 
     return ( 
