@@ -16,6 +16,7 @@ const Item = ({item}) => {
                     <Link to={`/item/${item.id}`}><Button variant="light">Mirá las opciones</Button></Link>
                 </Card.Body>
             </Card>
+            <br></br>
         </div>
         </>
 

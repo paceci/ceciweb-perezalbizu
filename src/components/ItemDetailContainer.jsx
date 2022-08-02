@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import macetas from "./utils/macetas";
 import { useParams } from "react-router";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
-function getItem() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(macetas);
-    }, 2000);
-  });
-}
 
 const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,17 +11,15 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setIsLoading(true);
-
-    getItem()
-      .then((items) => {
-        const modelo = items.find((modelo) => modelo.id === Number(id));
-
-        setMaceta(modelo);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    const db = getFirestore();
+    const itemDoc = doc (db, "macetas", id);
+    getDoc(itemDoc).then((snapshot) => {
+      setMaceta({...snapshot.data(), id:snapshot.id });
+      setIsLoading(false);
+    });
   }, [id]);
+
+
 
   if (isLoading) {
     return <p className="slogan">Estamos buscando los productos ...</p>;
