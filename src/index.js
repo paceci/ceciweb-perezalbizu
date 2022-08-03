@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBWc7_RGV2v9JC6wWosb6LObBsv3LLiUsM",
-  authDomain: "ceciweb-perezalbizu.firebaseapp.com",
-  projectId: "ceciweb-perezalbizu",
-  storageBucket: "ceciweb-perezalbizu.appspot.com",
-  messagingSenderId: "453404662198",
-  appId: "1:453404662198:web:f22739f5f2b60f3475c917"
+  apiKey: "AIzaSyBvl_jMwdc0XJc5qXZD3saGnF2Smx2geRA",
+  authDomain: "de-la-terraza.firebaseapp.com",
+  projectId: "de-la-terraza",
+  storageBucket: "de-la-terraza.appspot.com",
+  messagingSenderId: "439327771084",
+  appId: "1:439327771084:web:f487a9da87ed57c86fb569"
 };
 
 initializeApp(firebaseConfig);

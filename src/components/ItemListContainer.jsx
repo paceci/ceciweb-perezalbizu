@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import {getFirestore, collection, getDocs} from "firebase/firestore";
+import {getFirestore, collection, getDocs, query, where} from "firebase/firestore";
 import { useParams } from "react-router";
 
 
@@ -12,9 +12,14 @@ const {categoria} = useParams();
   useEffect(() => {
   setIsLoading(true);
   const db = getFirestore();
-  const itemsCollection = collection(db, "macetas");
-  getDocs(itemsCollection).then((snapshot) => {
-    const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data()}));
+  let q = query(collection(db, "macetas")) 
+  if(categoria) {
+    q = query(q,where("categoria", "==", categoria))
+  }
+  getDocs(q).then((snapshot) => {
+    const data = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()}));
     setItems(data);
   });
   setIsLoading(false);
