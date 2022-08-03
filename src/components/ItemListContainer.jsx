@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import {getFirestore, collection, getDocs} from "firebase/firestore";
+import { useParams } from "react-router";
 
 
 const ItemListContainer = () => {
 const [isLoading, setIsLoading] = useState(true);
 const [items, setItems] = useState([]);
+const {categoria} = useParams();
   
   useEffect(() => {
   setIsLoading(true);
@@ -16,7 +18,7 @@ const [items, setItems] = useState([]);
     setItems(data);
   });
   setIsLoading(false);
-  });
+  }, [categoria]);
   
     return ( 
         <>

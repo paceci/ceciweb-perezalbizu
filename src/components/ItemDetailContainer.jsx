@@ -19,8 +19,6 @@ const ItemDetailContainer = () => {
     });
   }, [id]);
 
-
-
   if (isLoading) {
     return <p className="slogan">Estamos buscando los productos ...</p>;
   }
