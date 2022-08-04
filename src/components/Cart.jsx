@@ -12,7 +12,7 @@ const Cart = () => {
     useEffect(() => {
         let total = 0;
         cartItems.forEach(maceta => {
-            total+= parseInt(maceta.precio);    
+            total+= parseInt(maceta.precio)*(maceta.count);    
         });
         setPrecioFinal(total);
     }, [cartItems]);
