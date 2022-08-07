@@ -29,7 +29,7 @@ const ItemDetail = ({maceta}) => {
                 </Card.Body>
                 {(count === 0) && <ItemCount stock={maceta.stock} initial={1} onAdd={handleOnAdd}/>}
                 <br></br>
-                <Link to="/cart"><button className="btn btn-secondary">Finalizá tu compra...</button></Link>
+                <Link to="/cart"><button className="btn btn-secondary">Ver carrito</button></Link>
             </Card>
         </div>
         </>
