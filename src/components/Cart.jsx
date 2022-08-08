@@ -11,10 +11,9 @@ const Cart = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const inputs = document.getElementsByTagName("input");
-        console.log(inputs[0]);
         const data = Array.from(inputs).map((input, index) => input.value);
-        console.log(data);
-        sendOrder(precioFinal, {nombre: data[0], telefono: data[1], email: data[2]})
+        sendOrder(precioFinal, {nombre: data[0], telefono: data[1], email: data[2]});
+        alert("Tu pedido fue enviado! Gracias!");
     }
 
 
@@ -59,9 +58,9 @@ const Cart = () => {
                     <Form.Control type="email" placeholder="Email" />
                 </Form.Group>
            
-            <Button type="submit"
-            //  onClick={() => sendOrder(precioFinal)}
-              className="btn btn-secondary m-3" >Enviar Pedido</Button>
+            <Button type="submit" 
+                //  onClick={() => sendOrder(precioFinal)}
+                    className="btn btn-secondary m-3" >Enviar Pedido</Button>
             </Form>
         </div>
         </>

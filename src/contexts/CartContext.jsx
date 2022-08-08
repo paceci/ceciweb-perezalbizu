@@ -22,13 +22,14 @@ const CartProvider = (props) => {
 
     const removeProduct = (id) => setCartItems(cartItems.filter(product => product.id !== id));
 
-    const sendOrder = async (precioFinal, buyerData) => {
+    const sendOrder = (precioFinal, buyerData) => {
         const db = getFirestore();
         const orderCollection = collection(db, "orders");
         const order = {
             items: cartItems,
             total: precioFinal,
             buyer: buyerData,
+            date: new Date(),
         };
         addDoc(orderCollection, order)
         .then(res => res.id) //esto devuelve el id de esa orden enviada
