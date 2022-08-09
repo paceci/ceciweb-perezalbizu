@@ -29,16 +29,25 @@ const Cart = () => {
         <>
         <div className="container text-center">
             <h2 className="slogan">Finalizá tu compra...</h2>
-                {cartItems.map(maceta => (
+                {cartItems.map((maceta) => (
                     <>
-                    <Card className="container-fluid subtitulo text-center" style={{width: 288}}>
+                    <Card
+                        key={maceta.id}
+                        className="container-fluid subtitulo text-center"
+                        style={{width: 288}}
+                    >
                         <Card.Body>
                             <Card.Text>{maceta.categoria}</Card.Text>
                             <Card.Text>{maceta.medida}</Card.Text>
                             <Card.Text>$ {maceta.precio}</Card.Text>
                             <Card.Text>{maceta.color}</Card.Text>
                             <Card.Text>{`De este modelo estás llevando ${maceta.count}`}</Card.Text>
-                            <Button onClick={() => removeProduct(maceta.id)} className="btn btn-secondary" >Eliminar Maceta</Button>
+                            <Button
+                                onClick={() => removeProduct(maceta.id)}
+                                className="btn btn-secondary"
+                            >
+                                Eliminar Maceta
+                            </Button>
                         </Card.Body>
                     </Card>
                     </>

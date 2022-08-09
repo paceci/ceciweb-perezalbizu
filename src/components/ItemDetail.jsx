@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import ItemCount from './ItemCount';
 import { CartContext } from "../contexts/CartContext";
 
@@ -29,7 +29,7 @@ const ItemDetail = ({maceta}) => {
                 </Card.Body>
                 {(count === 0) && <ItemCount stock={maceta.stock} initial={1} onAdd={handleOnAdd}/>}
                 <br></br>
-                <Link to="/cart"><button className="btn btn-secondary">Ver carrito</button></Link>
+                <Link to="/cart"><Button className="btn btn-secondary">Ver carrito</Button></Link>
             </Card>
         </div>
         </>
