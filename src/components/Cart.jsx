@@ -14,12 +14,12 @@ const Cart = () => {
         const data = Array.from(inputs).map((input, index) => input.value);
         sendOrder(precioFinal, {nombre: data[0], telefono: data[1], email: data[2]});
         alert("Tu pedido fue enviado! Gracias!");
-    }
+    };
 
 
     useEffect(() => {
         let total = 0;
-        cartItems.forEach(maceta => {
+        cartItems.forEach((maceta) => {
             total+= parseInt(maceta.precio)*(maceta.count);    
         });
         setPrecioFinal(total);
