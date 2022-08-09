@@ -13,7 +13,8 @@ const Cart = () => {
         const inputs = document.getElementsByTagName("input");
         const data = Array.from(inputs).map((input, index) => input.value);
         sendOrder(precioFinal, {nombre: data[0], telefono: data[1], email: data[2]});
-        alert("Tu pedido fue enviado! Gracias!");
+        alert(`Hola! Tu pedido fue enviado! Gracias!`);
+        clearCart();
     };
 
 

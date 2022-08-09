@@ -27,8 +27,8 @@ const NavBarId = ({marca}) => {
             <Link to={"/categoria/Clásica"} className="nav-link"><StyleOnMenu menu={"Clasica"}/></Link>
             <Link to={"/categoria/Icono"} className="nav-link"><StyleOnMenu menu={"Icono"}/></Link>
             <Link to={"/categoria/Cilindro"} className="nav-link"><StyleOnMenu menu={"Cilindro"}/></Link>
-            <Nav.Link><StyleOnMenu menu={"Imágenes"}/></Nav.Link>
-            <Nav.Link><StyleOnMenu menu={"Contacto"}/></Nav.Link>
+            <Link to={"/imagenes"} className="nav-link"><StyleOnMenu menu={"Imagenes"}/></Link>
+            <Link to={"/contacto"} className="nav-link"><StyleOnMenu menu={"Contacto"}/></Link>
             <Link to="/cart" className="nav-link"><CartWidget /></Link>
           </Nav>
         </Navbar.Collapse>
