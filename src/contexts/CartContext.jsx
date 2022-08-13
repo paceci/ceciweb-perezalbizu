@@ -22,7 +22,7 @@ const CartProvider = (props) => {
 
     const removeProduct = (id) => setCartItems(cartItems.filter(product => product.id !== id));
 
-    const sendOrder = (precioFinal, buyerData) => {
+    const sendOrder = async (precioFinal, buyerData) => {
         const db = getFirestore();
         const orderCollection = collection(db, "orders");
         const order = {
@@ -31,13 +31,14 @@ const CartProvider = (props) => {
             buyer: buyerData,
             date: new Date(),
         };
-        addDoc(orderCollection, order)
-        .then(res => res.id) //esto devuelve el id de esa orden enviada
-        .catch(err => ("error"));
+        
+        return addDoc(orderCollection, order)
+        .then((res) => res.id) //esto devuelve el id de esa orden enviada
+        .catch((err) => ("error"));        
     };
 
     return ( 
-        <CartContext.Provider value={{cartItems, setCartItems, addProduct, clearCart, isInCart, removeProduct, sendOrder}}>
+        <CartContext.Provider value={{cartItems, setCartItems, addProduct, clearCart, isInCart, removeProduct, sendOrder }}>
             {props.children}
         </CartContext.Provider>
      );

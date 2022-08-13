@@ -27,7 +27,7 @@ const Contacto = () => {
 				</section>
 			</div>
 			<div className="text-center pb-3">
-			  © 2021 Copyright:
+			  © 2022 Copyright:
             <p>Desarrollado por MCPA</p>
 			</div>
 		</footer>

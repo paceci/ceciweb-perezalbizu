@@ -1,3 +1,22 @@
+# "De La Terraza" 
+De La Terraza es un emprenidmiento dedicado a la venta de macetas de barro pintadas artesanalmente. Los colores y medidas pueden variar segun la disponibilidad.
+Las macetas pueden ser solas o con alguna plantita tipo suculenta en su interior.
+
+## Funcionalidades
+La app te permite navegar por el catálogo, según el stock disponible en el momento son las opciones que se muestran. También podes ingresar en cada una de las macetas para ver su medida, color y precio. 
+Podes ir armando tu carrito de compras, lo podes modificar si queres hacer algun cambio o eliminar por completo.
+Tambien, en el momento de enviar tu pedido debes cargar tus datos personales, asi se puede identificar la orden.
+
+### Tecnologias utilizadas
+React JS
+Bootstrap
+Firebase
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

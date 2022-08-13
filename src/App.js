@@ -10,7 +10,6 @@ import Cart from "./components/Cart";
 import Imagenes from "./components/Imagenes";
 import Contacto from "./components/Contacto";
 
-
 function App() {
 
   return (
