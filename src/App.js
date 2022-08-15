@@ -9,6 +9,7 @@ import CartProvider from "./contexts/CartContext"
 import Cart from "./components/Cart";
 import Imagenes from "./components/Imagenes";
 import Contacto from "./components/Contacto";
+import PAGES from "./components/utils/pages"
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
     <>
     <CartProvider>
       <BrowserRouter>
-        <NavBarId marca="De La Terraza" />
+        <NavBarId pages={PAGES} marca="De La Terraza" />
         <Routes>
           <Route index element={<ItemListContainer />} />
           <Route path="/categoria/:categoria" element={<ItemListContainer />} />
