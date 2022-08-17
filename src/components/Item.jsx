@@ -13,7 +13,7 @@ const Item = ({item}) => {
                 <Card.Body>
                     <Card.Title>{item.categoria}</Card.Title>
                     <Card.Text>{item.medida}</Card.Text>
-                    <Link to={`/item/${item.id}`}><Button variant="light">Mirá las opciones</Button></Link>
+                    <Link to={`/item/${item.id}`}><Button className="opciones">Mirá los detalles</Button></Link>
                 </Card.Body>
             </Card>
             <br></br>

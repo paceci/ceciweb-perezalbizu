@@ -13,8 +13,10 @@ function ItemCount({initial, stock, onAdd}) {
         setCount(count - 1);
     }
     function handleOnAddToCart(){
-        if (stock > 0 && count < stock){
+        if (stock > 0 && count <= stock){
             onAdd(count);
+        } else {
+            alert("No contamos con stock de este modelo. Elegí ota!")
         }
     }
 

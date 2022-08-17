@@ -1,15 +1,18 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown, NavItem } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import image from "../logoDLT.png";
-import StyleOnMenu from "./StyleOnMenu";
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom";
-import { Fragment } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const NavBarId = ({marca, pages}) => {
-    const estiloMenu = marca.toUpperCase();
-    
+const NavBarId = ({pages}) => {
+  const navigate = useNavigate();
+
+  const handleRedirect = (path) => {
+    navigate(path);
+  }
+  
   return (
+  
     <Navbar className="navbar" expand="lg">
       <Container>
         <Link to={"/"} className="navbar-brand">
@@ -22,40 +25,25 @@ const NavBarId = ({marca, pages}) => {
             className="d-inline-block align-top"
           />
         </Link>
-        <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Nav>
-          {pages.map((page) => (
-                <Fragment key={page.name}>
-                  {page.nested ? (
-                    <NavDropdown
-                    title={page.name}
-                    id="basic-nav-dropdown">
-                    </NavDropdown>
-                  ) : (
-                    <NavItem>
-                      <Link
-                        className="nav-link"
-                        aria-current="page"
-                        to={page.url}
-                      >
-                        {page.name}
-                      </Link>
-                    </NavItem>
-                  )}
-                </Fragment>
-              ))}
-
-
-            {/* <Link to={"/"} className="nav-link" >{estiloMenu}</Link>
-            <Link to={"/categoria/Clásica"} className="nav-link"><StyleOnMenu menu={"Clasica"}/></Link>
-            <Link to={"/categoria/Icono"} className="nav-link"><StyleOnMenu menu={"Icono"}/></Link>
-            <Link to={"/categoria/Cilindro"} className="nav-link"><StyleOnMenu menu={"Cilindro"}/></Link>
-            <Link to={"/imagenes"} className="nav-link"><StyleOnMenu menu={"Imagenes"}/></Link>
-            <Link to={"/contacto"} className="nav-link"><StyleOnMenu menu={"Contacto"}/></Link>*/}
-            <Link to="/cart" className="nav-link"><CartWidget /></Link> 
+          <Nav className="nav-menu_container nav-link" >
+            {pages.map((page) => (
+                <Nav.Item key={page.name}>
+                {page.nested ?
+                  <NavDropdown title={page.name} id="nav-dropdown" >
+                    {page.nested.map(({name, url}) => {
+                      return <NavDropdown.Item key={name} className="nav-link" onClick={() => handleRedirect(url)} >{name}</NavDropdown.Item>
+                    })}
+                  </NavDropdown> :
+                  <Nav.Item href="#/home" key={page.name} onClick={() => handleRedirect(page.url)} className="nav-item-element">
+                    {page.name}
+                  </Nav.Item>
+                }
+                </Nav.Item>
+            ))}
           </Nav>
         </Navbar.Collapse>
+          <Link to="/cart" className="nav-link"><CartWidget /></Link>
       </Container>
     </Navbar>
   );

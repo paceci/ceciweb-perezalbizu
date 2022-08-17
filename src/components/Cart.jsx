@@ -15,6 +15,7 @@ const Cart = () => {
         e.preventDefault();
         const id = await sendOrder(precioFinal, form);
         alert(`Tu pedido fue enviado. Este es tu número de seguimiento: ${id}. Gracias por elegir De La Terraza!`);
+        console.log(id);
         clearCart();
         navigate("/");
     };
@@ -33,12 +34,10 @@ const Cart = () => {
     
 
     return (
-        <>
-          <div className="container text-center">
+        <div className="container text-center">
             <h2 className="slogan">Finalizá tu compra...</h2>
             {cartItems.map((maceta) => (
-                <>
-                  <Card
+                <Card
                     key={maceta.id}
                     className="container-fluid subtitulo text-center"
                     style={{width: 288}}
@@ -57,7 +56,6 @@ const Cart = () => {
                         </Button>
                     </Card.Body>
                   </Card>
-                </>
             ))}
             <h2 className="slogan">{`Tu total es de $ ${precioFinal}`}</h2>
             <Link to="/" >
@@ -101,7 +99,6 @@ const Cart = () => {
                 </Button>
             </Form>
           </div>
-        </>
     );
 }
  

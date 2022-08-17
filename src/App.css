@@ -10,7 +10,10 @@
   font-weight: bold;
   color:#009688;
   text-align: center;
-
+}
+.opciones {
+  color: rgba(8, 34, 235, 0.5) !important;
+  background-color: whitesmoke !important;
 }
 .btn-secondary {
   background-color: whitesmoke !important;
@@ -64,4 +67,15 @@
   width: 200px;
   height: auto;
   display: inline;
+}
+.nav-item-element {
+  cursor: pointer;
+}
+.nav-item-element:hover {
+  color: blue;
+}
+.nav-menu_container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

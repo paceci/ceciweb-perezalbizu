@@ -1,5 +1,5 @@
 import React, {useState, createContext} from "react";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore, updateDoc, doc } from "firebase/firestore";
 
 export const CartContext = createContext();
 
@@ -31,9 +31,17 @@ const CartProvider = (props) => {
             buyer: buyerData,
             date: new Date(),
         };
-        
         return addDoc(orderCollection, order)
-        .then((res) => res.id) //esto devuelve el id de esa orden enviada
+        .then((res) => {
+            cartItems.forEach((cartItem) => {
+                const orderCount = cartItem.count;
+                const macetaStock = parseInt(cartItem.stock);
+                const docRef = doc(db,"macetas", cartItem.id);
+                updateDoc(docRef,{stock: macetaStock - orderCount});
+            })
+           
+
+        })
         .catch((err) => ("error"));        
     };
 
