@@ -13,9 +13,7 @@ const Cart = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const id = await sendOrder(precioFinal, form);
-        alert(`Tu pedido fue enviado. Este es tu número de seguimiento: ${id}. Gracias por elegir De La Terraza!`);
-        console.log(id);
+        sendOrder(precioFinal, form);
         clearCart();
         navigate("/");
     };

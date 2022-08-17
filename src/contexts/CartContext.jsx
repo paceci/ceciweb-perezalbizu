@@ -39,7 +39,7 @@ const CartProvider = (props) => {
                 const docRef = doc(db,"macetas", cartItem.id);
                 updateDoc(docRef,{stock: macetaStock - orderCount});
             })
-           
+            alert(`Tu pedido fue enviado! Este es tu número de seguimiento: ${res.id}. Gracias por elegir De La Terraza!`);
 
         })
         .catch((err) => ("error"));        
