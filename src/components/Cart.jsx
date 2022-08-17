@@ -61,41 +61,45 @@ const Cart = () => {
                     Vaciar carrito
                 </Button>
             </Link>
-            <Form 
-                onSubmit={handleSubmit}
-                className="info mb-3 container-fluid consulta col-10 col-lg-4 my-3"
-            >
-                <InputGroup className="mb-3">
-                    <InputGroup.Text>Nombre</InputGroup.Text>
-                    <Form.Control
-                        type="text"
-                        name="nombre"
-                        aria-label="Nombre"
-                        onChange={handleInputChange}
-                    />
-                </InputGroup>
-                <InputGroup className="mb-3">
-                    <InputGroup.Text>Teléfono</InputGroup.Text>
-                    <Form.Control
-                        type="tel"
-                        name="telefono"
-                        aria-label="Telefono"
-                        onChange={handleInputChange}
-                    />
-                </InputGroup>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Control
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        onChange={handleInputChange}
-                    />
-                </Form.Group>
-           
-                <Button type="submit" className="btn btn-secondary m-3">
-                    Enviar Pedido
-                </Button>
-            </Form>
+            {cartItems.lenght === 0 ? (
+                <></>
+            ) : (
+                <Form 
+                    onSubmit={handleSubmit}
+                    className="info mb-3 container-fluid consulta col-10 col-lg-4 my-3"
+                >
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text>Nombre</InputGroup.Text>
+                        <Form.Control
+                            type="text"
+                            name="nombre"
+                            aria-label="Nombre"
+                            onChange={handleInputChange}
+                        />
+                    </InputGroup>
+                    <InputGroup className="mb-3">
+                        <InputGroup.Text>Teléfono</InputGroup.Text>
+                        <Form.Control
+                            type="tel"
+                            name="telefono"
+                            aria-label="Telefono"
+                            onChange={handleInputChange}
+                        />
+                    </InputGroup>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Control
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            onChange={handleInputChange}
+                        />
+                    </Form.Group>
+            
+                    <Button type="submit" className="btn btn-secondary m-3">
+                        Enviar Pedido
+                    </Button>
+                </Form>
+            )}
           </div>
     );
 }
