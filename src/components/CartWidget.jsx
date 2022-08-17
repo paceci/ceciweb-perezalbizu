@@ -8,12 +8,19 @@ const CartWidget = () => {
 
     return (
     <>
-    <img src={cart} alt="Carrito Icono"
-    width={40}
-    height={40}
-    justify={"right"}
-    style={{"borderRadius":500}}/>
-    <span>{cartItems.length}</span>
+    {cartItems.length === 0 ? (
+        <></>
+    ) : (
+        <>
+            <img src={cart} alt="Carrito Icono"
+            width={40}
+            height={40}
+            justify={"right"}
+            style={{"borderRadius":500}}/>
+            <span>{cartItems.length}</span>
+        </>
+    )}
+    
     </>
     );
 }
