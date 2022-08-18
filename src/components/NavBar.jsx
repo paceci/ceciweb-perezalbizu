@@ -35,7 +35,7 @@ const NavBarId = ({pages}) => {
                       return <NavDropdown.Item key={name} className="nav-link" onClick={() => handleRedirect(url)} >{name}</NavDropdown.Item>
                     })}
                   </NavDropdown> :
-                  <Nav.Item href="#/home" key={page.name} onClick={() => handleRedirect(page.url)} className="nav-item-element">
+                  <Nav.Item href="#/home" key={page.name} onClick={() => handleRedirect(page.url)} className="nav-item_element">
                     {page.name}
                   </Nav.Item>
                 }

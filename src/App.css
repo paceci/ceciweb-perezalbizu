@@ -68,11 +68,11 @@
   height: auto;
   display: inline;
 }
-.nav-item-element {
+.nav-item_element {
   cursor: pointer;
 }
-.nav-item-element:hover {
-  color: blue;
+.nav-item_element:hover {
+  color: rgb(56, 56, 139);
 }
 .nav-menu_container {
   display: flex;
